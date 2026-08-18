@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Produtos from './containers/Produtos'
 import { GlobalStyle } from './styles'
-import { store, AppDispatch } from './containers/store'
-import { Provider, useDispatch } from 'react-redux'
+import { AppDispatch } from './containers/store'
+import { useDispatch } from 'react-redux'
 import { adicionar } from './containers/store/reducers/carrinho'
 import { favoritar } from './containers/store/reducers/favoritos'
 
@@ -33,7 +33,7 @@ function App() {
   }
 
   return (
-    <Provider store={store}>
+    <>
       <GlobalStyle />
       <div className="container">
         <Header />
@@ -43,7 +43,7 @@ function App() {
           adicionarAoCarrinho={adicionarAoCarrinho}
         />
       </div>
-    </Provider>
+    </>
   )
 }
 
